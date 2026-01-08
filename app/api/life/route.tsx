@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const height = 2556;
 
   // старт строго с дня рождения
-  const startDate = new Date(2000, 01, 17); // 04.12.1996
+  const startDate = new Date(1999, 12, 17); // 04.12.1996
   const today = new Date();
 
   const msPerWeek = 1000 * 60 * 60 * 24 * 7;
@@ -28,8 +28,8 @@ export async function GET(request: NextRequest) {
     const row = Math.floor(i / COLS);
     const col = i % COLS;
 
-    let fill = "#A9A9A9";
-    if (i < weeksLived) fill = "#696969";
+    let fill = "#696969";
+    if (i < weeksLived) fill = "#A9A9A9";
     else if (i === weeksLived) fill = "#f57c00";
 
     circles.push(
@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
 
   return new ImageResponse(
     (
-  <div
+     <div
   style={{
     width: "100%",
     height: "100%",
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
     justifyContent: "flex-start",
     alignItems: "center",
     background: "#000000",
-    paddingTop: 300,
+    paddingTop: 320,
     paddingBottom: 160,
   }}
 >
